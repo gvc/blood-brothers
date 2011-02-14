@@ -1,0 +1,40 @@
+<%= form_for @usuario do |f| -%>
+  <div>
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+  </div>
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation, 'Confirme a senha' %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div>
+    <%= f.label :tipo_sanguineo %>
+    <%= f.select :tipo_sanguineo, options_for_select(Usuario::TIPOS_SANGUINEOS.map { |x| [x, x] }), include_blank: true %>
+  </div>
+  <div>
+    <%= f.label :fator_rh %>
+    <label>
+      +
+      <%= f.radio_button :tipo_sanguineo, '+' %>
+    </label>
+    <label>
+      -
+      <%= f.radio_button :tipo_sanguineo, '-' %>
+    </label>
+    <label>
+      Não sei
+      <%= f.radio_button :tipo_sanguineo, '' %>
+    </label>
+  </div>
+  <div>
+    <%= submit_tag 'Cadastrar' %>
+  </div>
+<% end -%>
