@@ -8,6 +8,8 @@ describe Usuario do
   it { should have_db_column(:tipo_sanguineo).of_type(:string) }
   it { should have_db_column(:fator_rh).of_type(:string) }
   
+  it { should validate_presence_of(:nome) }
+  
   %w(+ -).each do |valor|
     it { should allow_value(valor).for(:fator_rh) }
   end
