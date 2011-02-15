@@ -7,6 +7,17 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <header>
+    <div class='content'>
+      <%- if current_usuario.present? %>
+        Olá
+      <%- else %>
+        <%= link_to 'Cadastre-se', new_usuario_path %>
+        |
+        <%= link_to 'Login', new_usuario_session_path %>
+      <%- end %>
+    </div>
+  </header>
   <%- flash.each do |name, msg| -%>
     <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
   <%- end -%>

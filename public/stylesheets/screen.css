@@ -4,6 +4,29 @@ body {
   color: #333;
 }
 
+HEADER {
+  background-color: #9C0413;
+  color: white;
+  height: 2.3em;
+  width: 100%;
+}
+
+HEADER .content {
+  width: 980px;
+  text-align: right;
+  margin: auto;
+}
+
+HEADER A, HEADER A:VISITED {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+HEADER A:HOVER {
+  font-style: italic;
+}
+
 .content {
   width: 980px;
   margin: auto;
